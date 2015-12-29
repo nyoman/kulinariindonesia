@@ -1,0 +1,91 @@
+CREATING YELPDEMO SITE
+----------------------
+
+
+1	Adding Bootstrap
+
+	> copy and paste css and javascrip to the header part of the layouts/application file
+
+	>> Styling table
+
+		>> open: restaurants/index file, add:
+
+			> add: <table class="table table-hover table-condensed">
+
+2	Adding Navigation Bar
+
+	> Add navbar to layouts/application file
+
+
+3	Simplify The Codes
+
+	>> 2 reasons to simplify the codes:
+
+		1. Minimize the typo mistakes, easier to debug
+		2. Simple codes, more readable
+
+	>> Use Partials template to simplify the codes
+
+		Note:
+
+		Partial file start with _(underscore)
+
+	>> Create partial file :
+	
+		layouts/_navbar.html.erb, 
+		layouts/_footer.html.erb, and
+		layouts/_bootstap.html.erb, 
+
+		> move navigation, footer, and SDN Bootstrap to it
+		> render them in the application file.
+
+4 	Build Beautiful Forms		
+
+	1	Styling the form (_form.html.erb)
+
+		> Add class: "form-group: to each div tag
+		> Add class: "form-control" to each field
+		> Add class: "btn btn-primary" to the submit button
+
+		NOTE: no comma (,) on the submit input
+
+	2	Styling the anker tags on edit page (edit.heml.erb)
+	
+		> Add class: "btn btn-link" to anker tags	
+
+	3 	Styling the anker tags (show, edit, and destroy) on index page
+
+		> Add class: "btn btn-link" to show, edit, and destroy tags
+		> Add class: "btn btn-link" to the input New Restaurant
+
+	4	Styling the link tags Show Page (show.html.erb)
+	
+		> Add class: "btn btn-link"	to link tags
+
+	5	Styling the link tag on the new.html.erb
+	
+		> class: "btn btn-link"
+
+	6	Adding Container Fluid to the layouts/application file
+	
+		> 	<%= render 'layouts/navbar' %>
+			<div class="container-fluid">
+				<%= yield %>
+			</div>
+			<%= render 'layouts/footer' %>
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+

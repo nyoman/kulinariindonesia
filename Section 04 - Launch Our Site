@@ -1,0 +1,270 @@
+Section 04 - Launch our Site
+----------------------------
+
+A.	Set Up Github
+
+	STEPS:
+
+	1. 
+
+Creating An Account On Github (if you do not have yet)
+
+	1.	Go Github
+
+		> Open github.com
+		> Create an account (if you do not have it yet)
+		> Create a new repository + name + description
+		>> Create ssh key
+		> goole: github ssh key
+		> help.github.com
+		
+		>> Follow the instructions
+
+		Step 1: Check for SSH keys
+
+			>>	Check the directory listing to see if you already have a public SSH key. 
+			    By default, the filenames of the public keys are one of the following:
+
+				id_dsa.pub
+				id_ecdsa.pub
+				id_ed25519.pub
+				id_rsa.pub
+
+			>	ls -al ~/.ssh
+				
+			>> result
+
+				ings-Mac:yelpdemo ing$ ls -al ~/.ssh
+				total 24
+				drwx------   5 ing  staff   170 Dec 28 00:44 .
+				drwxr-xr-x+ 23 ing  staff   782 Dec 28 19:56 ..
+				-rw-------   1 ing  staff  1766 Dec 28 00:31 id_rsa
+				-rw-r--r--   1 ing  staff   408 Dec 28 00:31 id_rsa.pub
+				-rw-r--r--   1 ing  staff   803 Dec 29 08:29 known_hosts
+				ings-Mac:yelpdemo ing$ 
+
+			>> copy and paste this from help.github.com
+			> 	pbcopy < ~/.ssh/id_rsa.pub + enter
+				NOTE: you will not see the result, but keep going to github and paste it there
+			> 	github > ssh key
+			>	paste it
+			>	confirm password: asdfjkl;G235
+
+			>> do these:
+
+			echo "# Yeldemo" >> README.md
+			git init
+			git add README.md
+			git commit -m "first commit"
+			git remote add origin git@github.com:nyoman/Yeldemo.git
+			git push -u origin master
+
+			> git init
+			> git status
+			> git add .
+			> git commit -m "first commit"
+			> git remote add origin git@github.com:nyoman/Yeldemo.git
+			>> ENTER id_rsa PASSWORD
+				nyoman
+			> git push -u origin master
+			:)	
+
+
+
+1.	Starting Git On OSX El Capitan
+
+	> Open a new terminal
+	> git --version
+	> to agree the xcode agreement
+	> agree
+	:)
+-------ON WINDOWS-------
+
+
+
+A	Set Up Github
+	-------------
+
+	STEPS:
+
+	1 Learning to save codes by using Git Version Control System (VCS), called 'Git'
+
+		Git VCS allow us to track our progress using save points.
+
+		Git creates a new save point by making copy each of out code files
+		at that moment in time.
+
+		This create us code history time lines.
+		In case we made a mistake or some mistakes, we wil be able to revert to earlier save point.
+
+
+	2 Upload our site to github
+
+		Github website on the other hand, is a hub to store out git codes file on line.
+
+		On Github, every application created store in different repository.
+
+		Every time we save out work with git and upload our files, the code in repository get updated.
+
+		Unless, we pay for privacy, our code will be able to access by any one.
+
+		This is allow us to collaborate with friends on a project with single-code based.
+
+
+		1 	Create an account on Github (if dont have it)
+
+		2	> github.com
+
+		3	> create ssh key (only one time, if had it, no need ot have it again)
+
+			NOTE FOR WINDOWS USER:
+
+			- When you installed ROR for the first time or when you used Github for the first time,
+			  it means you have already SSH key.
+
+			NOTE FOR MAC USER:
+			
+			- Follow the instructions:
+
+			> google: githu ssh key
+
+			> https://help.github.com/articles/generating-ssh-keys   
+
+			STEPS:
+
+			0 > help.githu.com
+			1 > Check for SSH Key 
+			2 > Generate a new SSH Key
+			3 > Add you SSH to Github
+
+
+
+B	Save Our Progress And Upload Our Code on Github
+	-----------------------------------------------
+
+
+	STEPS:
+
+	1 Principle
+
+		Add new repository for every new project
+
+	2 Add name on Repositoty name
+
+		> write name
+		> clike the button
+
+	3 In the terminal window initialize the git
+	
+		> git init	
+
+	4 On Githuh, copy the code bellow
+	
+		> git remote add origin git@github.com:nyoman/kulinari-indonesia.git
+		> paste it on terminal window
+
+	5 On terminal window check git status to check which files were chenged when last time you saved
+
+		> git status
+
+	6 Add all the changes to app directory that are ready to be saved
+	
+		> git add .
+
+			Note: . = all files in the current directory
+
+		>> See the changes been made
+		
+			> git status	
+
+			Note: you will see green color of the codes that were added to version control
+
+	7 Run git commit to save all the files that been save to version control
+	
+		> git commit -m "First commit"		
+
+			Note: this command will copy all files in the version control
+
+	8 Push or Upload the files to Github
+	
+		>> Github: copy this code and paste it on terminal window
+
+			> git push -u origin master 
+
+				Note: All files have been uploaded on Github
+
+				>> Go and see the files on Github
+			
+			> click : nyoman/kulinari indonesia
+			
+			DONE!
+
+
+	9 REPEATING TO PRACTICE
+	
+		>> Make some changes on you files and push them on Github
+
+		> git status
+		> git add . 
+		> git commit -m "Update About page"
+		> git push
+
+
+C.	Deploy On Heroku
+	----------------
+		
+		>> google: get started with heroku
+
+		Steps (4):
+
+		1 Sign Up / Log In
+
+		2 Setup -> download Heroku Toolbelt
+
+			> install it on you system
+			>> follow the instruction
+
+		3 To start after the installion
+		
+			> heroku login
+			> enter your email and password that you used on signed up on heroku
+
+				Note: if there was a problem, go to: devcenter.heroku.com/articles/keys
+
+		4 Deploy the app on heroku (final step)
+		
+			>> github: https://github.com/nyoman/kulinari-indonesia
+
+				>> copy ssh link: git@github.com:nyoman/kulinari-indonesia.git
+
+				> git@github.com:nyoman/kulinari-indonesia.git
+				> cd kulinari-indonesia
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+

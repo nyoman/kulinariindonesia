@@ -1,0 +1,89 @@
+CREATING YELPDEMO SITE
+----------------------
+
+1 Create the app
+
+	> rails new yelpdemo
+
+2 Add First Pages
+
+	> rails g controller Pages about contact
+	> http://localhost:3000/pages/about	
+	> Add copyrights / footer	
+
+3 Add Links
+
+	> 	<a href="/pages/about">About</a>
+		<a href="/pages/contact">Contact</a>
+
+	> 	Add those links on layouts/application file	
+
+	> 	Move copy right / footer to layouts/application file	
+
+
+4 Add Restaurants (With Database)
+
+	> rails g scaffold Restaurant name:string address:string phone:string website:string
+
+	NOTE:
+
+	-	The above instruction created a lot of files, one of of them is 
+		db/migrate.
+
+		We call that file MIGRATION
+
+	-	We added Restaurant, we need to have 
+		database to store information about them.	
+
+	-	We gave rails instruction of what data to store. 
+		And this is called MIGRATION.	
+
+	-	Any change made to the database, whether we add new field,
+		or changing the existing field, we have to create a new migration.	
+
+	-	The Migration, always need 3 steps proccess:
+	
+		1. 	Generate the migration on rails
+
+		2.	rake db:migrate
+
+			It is about to take the instruction from the migration and run them
+			by creating database table or new columns that we wanted.
+
+		3.	Re-run the server
+
+	>> Test the browser
+
+		> http://localhost:3000/restaurants/new
+
+		>>> Add some data:
+
+			Restauran 1
+			Blok G2 No 35, BTN Bambu Kuning, BJGD, BGR
+			021 11111
+			restaurant1@restauran.com
+
+5	Set Up The Home Page
+
+	>> In the routes files, add:
+
+		>   root 'restaurants#index'
+
+	>> Checking the route paths
+
+		> rake routes	
+
+		RESULTS:
+
+				 Prefix Verb   URI Pattern                     Controller#Action
+		    restaurants GET    /restaurants(.:format)          restaurants#index
+		                POST   /restaurants(.:format)          restaurants#create
+		 new_restaurant GET    /restaurants/new(.:format)      restaurants#new
+		edit_restaurant GET    /restaurants/:id/edit(.:format) restaurants#edit
+		     restaurant GET    /restaurants/:id(.:format)      restaurants#show
+		                PATCH  /restaurants/:id(.:format)      restaurants#update
+		                PUT    /restaurants/:id(.:format)      restaurants#update
+		                DELETE /restaurants/:id(.:format)      restaurants#destroy
+		    pages_about GET    /pages/about(.:format)          pages#about
+		  pages_contact GET    /pages/contact(.:format)        pages#contact
+		           root GET    /                               restaurants#index		
