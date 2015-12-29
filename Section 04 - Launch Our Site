@@ -1,3 +1,184 @@
+UPLOAD TO GITHUB
+
+1 Create a new repository
+
+2 …or create a new repository on the command line
+
+	echo "# kulinariindonesia" >> README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin git@github.com:nyoman/kulinariindonesia.git
+	git push -u origin master
+
+	RESULT:
+
+	>> it push -u origin master
+		Counting objects: 101, done.
+		Delta compression using up to 2 threads.
+		Compressing objects: 100% (92/92), done.
+		Writing objects: 100% (101/101), 26.97 KiB | 0 bytes/s, done.
+		Total 101 (delta 4), reused 0 (delta 0)
+		To git@github.com:nyoman/kulinariindonesia.git
+		 * [new branch]      master -> master
+		Branch master set up to track remote branch master from origin.
+
+	>> To check the existance of our files in the repository
+	
+	> git remote -v
+
+	----- IF YOU MADE ANY CHANGE / CHANGES ------
+
+	DO THIS:
+
+	> git status
+	> git add .
+	> git commit -u "statement"
+	> git push
+	> git remote -v
+	>> reload the browser
+
+
+UPLOAD TO HEROKU
+
+STEPS:
+
+1	Sign Up To Create An Account
+
+2	Make The App Ready To Deploy To Production On Heroku
+
+	NOTE:
+
+	1 Heroku does not support sqlite
+	2 Heroku uses postgres as its database
+
+	> Open Gemfile
+	> Move sqlite to group development test
+	> Add group production and some needed gems, as seen bellow:
+
+		group :production do
+			gem 'pg'
+			gem 'rails_12factor' 
+		end
+
+	>> Go to command line and do this
+	> bundle install --without production 	
+	> git status
+	> git add .
+	> git commit -u "statement"
+
+
+2 Set Up
+
+	> Download Heroku Toolbelt
+	> Install it on your computer
+	> heroku login
+	> I have installed the toolbelt
+
+3 Prepare the app	
+
+	>>	Execute the following commands to clone the sample application:
+	
+	>  	git clone https://github.com/heroku/kulinariindonesia.git
+	>	cd kulinariindonesia
+		You now have a functioning git repository that contains a simple application as well as a Gemfile file, which is used by Ruby’s dependency manager, bundler.
+
+	> heroku create
+	
+	> git push heroku master
+
+	RESULT
+
+	remote: -----> Compressing... done, 29.4MB
+	remote: -----> Launching... done, v5
+	remote:        https://warm-brushlands-1777.herokuapp.com/ deployed to Heroku
+	remote: 
+	remote: Verifying deploy... done.
+	To https://git.heroku.com/warm-brushlands-1777.git
+	 * [new branch]      master -> master
+
+	NOTE: 
+	
+	The link of the app in heroku is this one:
+
+	remote:        https://warm-brushlands-1777.herokuapp.com
+
+
+4 Accessing From The Browser
+
+	>> Open the browser
+	>> Paste this link
+
+	> https://warm-brushlands-1777.herokuapp.com
+
+	RESULT: 
+
+	>> Error: 
+
+		We're sorry, but something went wrong.
+		If you are the application owner check the logs for more information.
+
+	WHY ERROR:
+	
+	It coused by the new changed made to database from sqlite to postgres
+
+	HOW TO SOLVE IT?
+
+	> heroku rake db:migrate
+
+	RESULT:
+
+	:)
+
+
+5	Renaming The Site
+
+	>> Renaming the site:
+
+		From 	: warm-brushlands-1777.herokuapp.com  
+		To 		: kulinari-indonesia.herokuapp.com  
+
+	STEPS:
+		
+
+	> heroku login
+	>>Enter your Heroku credentials.
+	> Email: inyoman_gurnitha@yahoo.com
+	> Password (typing will be hidden): 
+	  #Logged in as inyoman_gurnitha@yahoo.com
+	> heroku apps:rename kulinari-indonesia --app warm-brushlands-1777
+	  #Renaming warm-brushlands-1777 to kulinari-indonesia... done
+	  #https://kulinari-indonesia.herokuapp.com/ | https://git.heroku.com/kulinari-indonesia.git
+	  #Git remote heroku updated
+
+	> https://kulinari-indonesia.herokuapp.com  
+
+	> Test it out
+
+	RESULT:
+
+	:)
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Section 04 - Launch our Site
 ----------------------------
 
